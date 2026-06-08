@@ -15,8 +15,7 @@
 <body>
 
 <nav class="navbar">
-  <h2>DataPrime</h2>
-
+  
   <div class="nav-links">
     <a href="#courses">Kurslar</a>
     <a href="#trainers">Təlimçilər</a>
@@ -144,15 +143,17 @@
     <p>📍 28 May Tesla parkın yanı</p>
     <p>📞 +994 51-654-21-66</p>
 
-    <a href="https://wa.me/994516542166?text=Salam%2C%20kurs%20haqqinda%20melumat%20almaq%20isteyirem" target="_blank" class="whatsapp-btn">
-      💬 WhatsApp ilə yaz
-    </a>
+    <a class="whatsapp-btn"
+   href="https://wa.me/994516542166"
+   target="_blank">
+  💬 WhatsApp ilə yaz
+</a>
 
-    <p>📸 Instagram:</p>
-
-    <a href="https://www.instagram.com/dataprimeacademiya/" target="_blank" class="insta-btn">
-      @dataprimeacademiya
-    </a>
+<a class="insta-btn"
+   href="https://www.instagram.com/dataprimeacademiya/"
+   target="_blank">
+  📸 Instagram səhifəsi
+</a>
 
   </div>
 
@@ -165,8 +166,17 @@
 
   <div class="form">
     <input id="name" placeholder="Ad Soyad" autocomplete="name">
-<input id="phone" placeholder="Telefon" autocomplete="tel">
-<input id="course" placeholder="Kurs" autocomplete="off">
+    <input id="phone" placeholder="Telefon" autocomplete="tel">
+
+    <!-- ✔ FIX BURADA -->
+    <select id="course">
+      <option value="">Kurs seç</option>
+      <option value="Excel">Excel</option>
+      <option value="SQL">SQL</option>
+      <option value="Power BI">Power BI</option>
+      <option value="Python">Python</option>
+    </select>
+
     <button onclick="send()">Göndər</button>
 
     <p id="msg"></p>

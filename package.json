@@ -14,5 +14,14 @@
     "express": "^5.2.1",
     "mongodb": "6.5",
     "mongoose": "7.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konulazadli05-afk/dataprime-academy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/konulazadli05-afk/dataprime-academy/issues"
+  },
+  "homepage": "https://github.com/konulazadli05-afk/dataprime-academy#readme"
 }

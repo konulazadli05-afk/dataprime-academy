@@ -10,15 +10,10 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 /* ======================
-   MONGO DB CONNECT (FIXED)
+   MONGO DB CONNECT
 ====================== */
 mongoose.connect(
-  "mongodb+srv://konulazadli05_db_user:mhmefQ9TtFhAnSQZ@cluster0.e2jrc15.mongodb.net/test?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000
-  }
+  "mongodb+srv://konulazadli05_db_user:DataPrime2026@cluster0.e2jrc15.mongodb.net/dataprime?retryWrites=true&w=majority"
 )
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log("Mongo error:", err));
@@ -26,11 +21,13 @@ mongoose.connect(
 /* ======================
    MODEL
 ====================== */
-const Registration = mongoose.model("Registration", {
+const RegistrationSchema = new mongoose.Schema({
   name: String,
   phone: String,
   course: String
 });
+
+const Registration = mongoose.model("Registration", RegistrationSchema);
 
 /* ======================
    COURSES DATA
@@ -62,7 +59,7 @@ app.get("/api/course/:id", (req, res) => {
 });
 
 /* ======================
-   REGISTER API (FIXED)
+   REGISTER API
 ====================== */
 app.post("/api/register", async (req, res) => {
   try {
@@ -85,7 +82,7 @@ app.post("/api/register", async (req, res) => {
     await Registration.create({ name, phone, course });
 
     return res.status(200).json({
-      message: "✅ Qeydiyyat uğurla tamamlandı!"
+      message: "Qeydiyyat uğurla tamamlandı!"
     });
 
   } catch (err) {
@@ -98,8 +95,22 @@ app.post("/api/register", async (req, res) => {
 });
 
 /* ======================
+   ADMIN PANEL API
+====================== */
+app.get("/api/registrations", async (req, res) => {
+  try {
+    const data = await Registration.find().sort({ _id: -1 });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: "Məlumatlar alınmadı" });
+  }
+});
+
+/* ======================
    START SERVER
 ====================== */
-app.listen(3000, () => {
-  console.log("http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });

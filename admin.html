@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qeydiyyatdan Keçənlər</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins, sans-serif;
+  background:#07111f;
+  color:white;
+}
+
+/* HEADER */
+h1{
+  text-align:center;
+  padding:25px;
+  font-size:32px;
+  background:linear-gradient(90deg,#7c4dff,#00d4ff);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* CONTAINER */
+.container{
+  padding:20px 8%;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:15px;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 20px rgba(124,77,255,0.25);
+}
+
+.card p{
+  margin:6px 0;
+  color:#d6deeb;
+}
+
+.card b{
+  color:#8fbcff;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>📋 Qeydiyyatdan Keçənlər</h1>
+
+<div class="container" id="list"></div>
+
+<script>
+async function loadData() {
+  try {
+    const res = await fetch("/api/registrations");
+    const data = await res.json();
+
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+
+    data.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "card";
+
+      div.innerHTML = `
+        <p><b>Ad:</b> ${item.name}</p>
+        <p><b>Telefon:</b> ${item.phone}</p>
+        <p><b>Kurs:</b> ${item.course}</p>
+      `;
+
+      list.appendChild(div);
+    });
+
+  } catch (err) {
+    document.getElementById("list").innerHTML =
+      "<p>❌ Serverə qoşulmaq olmur</p>";
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>

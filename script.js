@@ -1,6 +1,6 @@
 async function send() {
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
   const course = document.getElementById("course").value;
 
   const msg = document.getElementById("msg");
@@ -20,11 +20,7 @@ async function send() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        name,
-        phone,
-        course
-      })
+      body: JSON.stringify({ name, phone, course })
     });
 
     const data = await res.json();
@@ -42,8 +38,6 @@ async function send() {
     }
 
   } catch (err) {
-    console.log(err);
-
     msg.innerText = "Serverə qoşulmaq olmur!";
     msg.style.color = "red";
   }
