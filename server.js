@@ -18,11 +18,11 @@ app.get("/", (req, res) => {
 });
 
 /* ======================
-   MONGO DB CONNECT
+   MONGO DB CONNECT (SAFE FIX)
 ====================== */
-mongoose.connect(
-  "mongodb+srv://konulazadli05_db_user:DataPrime2026@cluster0.e2jrc15.mongodb.net/dataprime?retryWrites=true&w=majority"
-)
+const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://konulazadli05_db_user:DataPrime2026@cluster0.e2jrc15.mongodb.net/dataprime?retryWrites=true&w=majority";
+
+mongoose.connect(MONGO_URL)
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log("Mongo error:", err));
 
