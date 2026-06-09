@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const path = require("path");
 
 const app = express();
 
@@ -11,18 +10,11 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 /* ======================
-   HOME PAGE FIX
+   MONGO DB CONNECT
 ====================== */
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-/* ======================
-   MONGO DB CONNECT (SAFE FIX)
-====================== */
-const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://konulazadli05_db_user:DataPrime2026@cluster0.e2jrc15.mongodb.net/dataprime?retryWrites=true&w=majority";
-
-mongoose.connect(MONGO_URL)
+mongoose.connect(
+  "mongodb+srv://konulazadli05_db_user:DataPrime2026@cluster0.e2jrc15.mongodb.net/dataprime?retryWrites=true&w=majority"
+)
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.log("Mongo error:", err));
 
