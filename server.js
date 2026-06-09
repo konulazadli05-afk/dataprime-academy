@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
@@ -8,6 +9,13 @@ const app = express();
 ====================== */
 app.use(express.json());
 app.use(express.static(__dirname));
+
+/* ======================
+   HOME PAGE FIX
+====================== */
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 /* ======================
    MONGO DB CONNECT
