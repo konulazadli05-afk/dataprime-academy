@@ -10,181 +10,417 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
 </head>
 
 <body>
 
 <nav class="navbar">
-  
-  <div class="nav-links">
-    <a href="#courses">Kurslar</a>
-    <a href="#trainers">Təlimçilər</a>
-    <a href="#contact">Əlaqə</a>
-  </div>
+
+    <div class="logo">
+        <a href="#">
+            <img src="images/logo.jpg" alt="DataPrime Academy">
+        </a>
+    </div>
+
+    <div class="nav-links">
+
+    <a href="#" id="nav-home">Ana Səhifə</a>
+
+    <a href="#about" id="nav-about">Haqqımızda</a>
+
+<a href="#program" id="nav-program">Proqram</a>
+
+<a href="#courses" id="nav-courses">Kurslar</a>
+
+<a href="#trainers" id="nav-trainers">Təlimçilər</a>
+
+<a href="#graduates" id="nav-graduates">Məzunlar</a>
+
+<a href="#career" id="nav-career">Karyera və Dəstək</a>
+
+<a href="#register" id="nav-register">Qeydiyyat</a>
+
+<a href="#contact" id="nav-contact">Əlaqə</a>
+</div>
+
+    <div class="right-menu">
+     <a href="javascript:void(0)" class="lang-btn" onclick="changeLanguage('az')">AZ</a>
+
+<span>|</span>
+
+<a href="javascript:void(0)" class="lang-btn" onclick="changeLanguage('en')">EN</a>
+    </div>
+
 </nav>
 
 <header class="header">
-  <h1>DataPrime Academy</h1>
-  <p>Dövrün Prime nümunəsi olmaq üçün sizi data səyahətinə çıxarırıq.</p>
+  <h1 id="title">DataPrime Academy</h1>
+
+<p id="subtitle">
+    Dövrün Prime nümunəsi olmaq üçün sizi data səyahətinə çıxarırıq.
+</p>
 </header>
 
-<!-- 📚 KURSLAR -->
+<section class="section" id="about">
+
+    <h2 id="about-title">Haqqımızda</h2>
+
+    <div class="card about-card">
+
+        <p id="about-text1">
+            <strong>DataPrime Academy 2024-cü ildən fəaliyyət göstərən, data analitikası və rəqəmsal bacarıqların inkişafı istiqamətində ixtisaslaşmış təlim mərkəzidir.</strong>
+            Akademiyanın əsas məqsədi iştirakçılara nəzəri biliklərlə yanaşı praktiki bacarıqlar qazandıraraq onları müasir əmək bazarının tələblərinə uyğun peşəkar mütəxəssis kimi yetişdirməkdir.
+        </p>
+
+        <br>
+
+        <p  id="about-text2">
+            <strong>Tədris proqramları beynəlxalq standartlara uyğun hazırlanır</strong> və Excel, SQL, Python, Power BI, statistika və digər data analitikası alətlərini əhatə edir. Təlimlər real layihələr, praktiki tapşırıqlar və mentor dəstəyi ilə keçirilərək iştirakçıların biliklərini real iş mühitində tətbiq etməsinə şərait yaradır.
+        </p>
+
+        <br>
+
+        <p id="about-text3">
+            <strong>DataPrime Academy fəaliyyətə başladığı gündən etibarən keyfiyyətli təhsil, davamlı inkişaf və tələbəyönümlü yanaşmanı əsas prinsip kimi qəbul edir.</strong>
+            Akademiya öz fəaliyyətini peşəkar kadrların hazırlanmasına, gənclərin karyera inkişafına dəstək göstərməyə və ölkədə data sahəsinin inkişafına töhfə verməyə yönəldib.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="section" id="program">
+
+    <h2 id="program-title">Proqram</h2>
+
+    <p class="section-desc" id="program-text1">
+        Online Data Analitika Təlimi data analitikası sahəsində peşəkar karyera qurmaq istəyənlər üçün hazırlanmış nəzəri və praktiki təlim proqramıdır.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3 id="program-card1-title">Online Data Analitika Təlimi</h3>
+
+            <p  id="program-duration"> <b>Müddət:</b> 5 ay</p>
+            <p id="program-schedule"><b>Dərs qrafiki:</b> Həftədə 3 dəfə</p>
+            <p id="program-days"> 1, 3 və 5-ci günlər</p>
+            <p id="program-time"><b>Saat:</b> 19:00 – 21:00</p>
+
+            <br>
+
+            <p id="program-subjects"><b>Tədris olunan proqramlar</b></p>
+
+            <p>📚 Excel</p>
+            <p>📚 SQL</p>
+            <p>📚 Python</p>
+            <p>📚 Power BI</p>
+            <p>📚 Statistika</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3 id="payment-title">Ödəniş və Sertifikat</h3>
+
+            <p id="total-payment"><b>Ümumi ödəniş:</b> 425 AZN</p>
+            <p id="monthly-payment"><b>Aylıq ödəniş:</b> 85 AZN</p>
+
+            <br>
+
+            <p id="final-exam">Final imtahanı keçirilir.</p>
+            <p id="certificate">Nəticəyə əsasən Data Analitika Sertifikatı təqdim olunur.</p>
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2 id="process-title">Tədris Prosesi</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+          <h3 id="first-months">İlk 4 Ay</h3>
+
+            <p id="first-months-text">Bütün modullar nəzəri və praktiki şəkildə tədris olunur.</p>
+
+            <br>
+
+            <p>✔ Excel</p>
+            <p>✔ SQL</p>
+            <p>✔ Python</p>
+            <p>✔ Power BI</p>
+            <p>✔ Statistika</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3 id="last-month">Son Ay</h3>
+
+            <p id="project-text">✔ İlk 15 gün ərzində 5 real layihə hazırlanır.</p>
+
+             <p id="exam-text">✔ Son 15 gün final imtahanı keçirilir.</p>
+
+             <p id="certificate-text">İmtahan nəticəsinə əsasən Data Analitika Sertifikatı təqdim olunur.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
 <section class="section" id="courses">
-  <h2>📚 Kurslar</h2>
+  <h2 id="courses-title">Kurslar</h2>
 
   <div class="grid">
     <div class="card">
-      <h3>Excel</h3>
-      <p>Məlumatların təhlili üçün güclü funksiyalar və formullardan istifadə etmək</p>
-      <p>Pivot cədvəllərlə böyük məlumatları asanlıqla qurmaq və təhlil etmək</p>
-      <p>Müxtəlif növ qrafik və diaqramlarla məlumatları vizuallaşdırmaq</p>
-      <p>Excel data analitikasında güclü təməl yaradır</p>
+     <h3 id="excel-title">Excel</h3>
+
+<p id="excel-text1">Məlumatların təhlili üçün güclü funksiyalar və formullardan istifadə etmək</p>
+<p id="excel-text2">Pivot cədvəllərlə böyük məlumatları asanlıqla qurmaq və təhlil etmək</p>
+<p id="excel-text3">Müxtəlif növ qrafik və diaqramlarla məlumatları vizuallaşdırmaq</p>
+<p id="excel-text4">Excel data analitikasında güclü təməl yaradır</p>
     </div>
 
     <div class="card">
-      <h3>SQL</h3>
-      <p>Mürəkkəb sorğularla məlumatları təhlil etmək</p>
-      <p>Məlumat bazalarında dəyərli məlumatları çıxarmaq</p>
-      <p>Böyük həcmli məlumatları asanlıqla idarə etmək</p>
+      <h3 id="sql-title">SQL</h3>
+
+<p id="sql-text1">Mürəkkəb sorğularla məlumatları təhlil etmək</p>
+<p id="sql-text2">Məlumat bazalarında dəyərli məlumatları çıxarmaq</p>
+<p id="sql-text3">Böyük həcmli məlumatları asanlıqla idarə etmək</p>
     </div>
 
     <div class="card">
-      <h3>Power BI & Data Analytics</h3>
-      <p>Məlumatlarınızı interaktiv dashboardlarda vizuallaşdırmaq</p>
-      <p>Dəqiq hesabatlar hazırlayıb komandanızla paylaşmaq</p>
-      <p>Müxtəlif məlumat mənbələrini birləşdirib analiz etmək</p>
-      <p>Real vaxtda analitik məlumatlar əldə etmək</p>
+      <h3 id="powerbi-title">Power BI & Data Analytics</h3>
+
+<p id="powerbi-text1">Məlumatlarınızı interaktiv dashboardlarda vizuallaşdırmaq</p>
+<p id="powerbi-text2">Dəqiq hesabatlar hazırlayıb komandanızla paylaşmaq</p>
+<p id="powerbi-text3">Müxtəlif məlumat mənbələrini birləşdirib analiz etmək</p>
+<p id="powerbi-text4">Real vaxtda analitik məlumatlar əldə etmək</p>
     </div>
 
     <div class="card">
-      <h3>Python</h3>
-      <p>Data təmizlənməsi və emalı</p>
-      <p>Statistik analizlər</p>
-      <p>Maşın öyrənməsi (Scikit-learn)</p>
-      <p>Böyük məlumatlarla işləmə (Pandas, NumPy)</p>
+<h3 id="python-title">Python</h3>
+
+<p id="python-text1">Data təmizlənməsi və emalı</p>
+<p id="python-text2">Statistik analizlər</p>
+<p id="python-text3">Maşın öyrənməsi (Scikit-learn)</p>
+<p id="python-text4">Böyük məlumatlarla işləmə (Pandas, NumPy)</p>
     </div>
   </div>
 </section>
 
-<!-- 🎓 PROQRAM -->
-<section class="section">
 
-  <h2>🎓 Proqram Məlumatı</h2>
 
-  <div class="info">
 
-    <p>⏳ Müddət: 2 - 4 ay</p>
-    <p>🎯 Səviyyə: Başlanğıc → Təkmil</p>
-    <p>📜 Sertifikat: Verilir</p>
-    <p>💼 Fokus: İşə hazırlıq və real layihələr</p>
-
-  </div>
-
-</section>
-
-<!-- 👨‍🏫 TƏLİMÇİLƏR -->
 <section class="section" id="trainers">
 
-  <h2>👨‍🏫 Təlimçilər</h2>
+  <h2 id="trainers-title">Təlimçilər</h2>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="images/nihad.jpg" alt="Nihad Məmmədli" class="teacher-img">
+
+    <h3 id="trainer1-name">Nihad Məmmədli</h3>
+
+    <p id="trainer1-job"><b>Vəzifə:</b> Python Təlimçisi</p>
+
+    <p id="trainer1-exp"><b>Təcrübə:</b> Milla Diary LLC – Data Analyst</p>
+  </div>
+
+  <div class="card">
+    <img src="images/ziya.jpg" alt="Ziya Hacıyev" class="teacher-img">
+
+    <h3 id="trainer2-name">Ziya Hacıyev</h3>
+
+    <p id="trainer2-job"><b>Vəzifə:</b> Excel Təlimçisi</p>
+
+    <p id="trainer2-cert"><b>Sertifikatlar:</b> Excel, SQL, Power BI</p>
+
+    <p id="trainer2-exp"><b>Təcrübə:</b> ATS Food MMC – Financial Data Analyst</p>
+  </div>
+
+  <div class="card">
+    <img src="images/resul.jpg" alt="Rəsul Səfərəliyev" class="teacher-img">
+
+    <h3 id="trainer3-name">Rəsul Səfərəliyev</h3>
+
+    <p id="trainer3-job"><b>Vəzifə:</b> Statistika, Power BI Təlimçisi</p>
+
+    <p id="trainer3-exp"><b>Təcrübə:</b> PashaPay – Data Analyst</p>
+  </div>
+
+  <div class="card">
+    <img src="images/ayan.jpg" alt="Ayan Məmmədzadə" class="teacher-img">
+
+    <h3 id="trainer4-name">Ayan Məmmədzadə</h3>
+
+    <p id="trainer4-job"><b>Vəzifə:</b> Excel Təlimçisi</p>
+
+    <p id="trainer4-cert"><b>Sertifikat:</b> Microsoft Office Specialist: Excel Expert</p>
+
+    <p id="trainer4-exp"><b>Təcrübə:</b> Pasha Insurance – Sales Reporting and Analytics</p>
+  </div>
+
+  <div class="card">
+    <img src="images/namiq.jpg" alt="Namiq Cəfərov" class="teacher-img">
+
+    <h3 id="trainer5-name">Namiq Cəfərov</h3>
+
+    <p id="trainer5-job"><b>Vəzifə:</b> Python və SQL Təlimçisi</p>
+
+    <p id="trainer5-exp"><b>Təcrübə:</b> Digital Umbrella – Data Analyst</p>
+  </div>
+
+  <div class="card">
+    <img src="images/ismayil.jpg" alt="İsmayıl Əliyev" class="teacher-img">
+
+    <h3 id="trainer6-name">İsmayıl Əliyev</h3>
+
+    <p id="trainer6-job"><b>Vəzifə:</b> Statistika Təlimçisi</p>
+
+    <p id="trainer6-cert"><b>Sertifikat:</b> MNS (Master of Natural Sciences)</p>
+
+    <p id="trainer6-speciality"><b>İxtisas:</b> Data Analytics & AI</p>
+
+    <p id="trainer6-exp"><b>Təcrübə:</b> ELSER LLC, MSC Shipping (BI)</p>
+  </div>
+
+</div>
+</section>
+
+
+
+   <section class="section" id="graduates">
+
+    <h2 id="graduates-title">Məzunlar</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="images/Ali.jpeg" alt="Ali Əliyev" class="teacher-img">
+            <h3>Ali Əliyev</h3>
+            <p id="graduate1-course"><b>Məzun:</b> Microsoft Excel</p>
+            <p id="graduate1-cert">📜 Excel Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Elvin.jpeg" alt="Elvin Əliyev" class="teacher-img">
+            <h3>Elvin Əliyev</h3>
+            <p id="graduate2-course"><b>Məzun:</b> Microsoft Excel</p>
+            <p id="graduate2-cert">📜 Excel Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Mahmmad.jpeg" alt="Məhəmməd Sadıqov" class="teacher-img">
+            <h3>Məhəmməd Sadıqov</h3>
+            <p id="graduate3-course"><b>Məzun:</b> Microsoft Excel</p>
+            <p id="graduate3-cert">📜 Excel Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Narmin.jpeg" alt="Nərmin Gülməmmədova" class="teacher-img">
+            <h3>Nərmin Gülməmmədova</h3>
+            <p id="graduate4-course"><b>Məzun:</b> Power BI</p>
+            <p id="graduate4-cert">📜 Power BI Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Javid.jpeg" alt="Cavid Həsənzadə" class="teacher-img">
+            <h3>Cavid Həsənzadə</h3>
+            <p id="graduate5-course"><b>Məzun:</b> Power BI</p>
+            <p id="graduate5-cert">📜 Power BI Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/huseynali.jpeg" alt="Hüseynəli Mehdiyev" class="teacher-img">
+            <h3>Hüseynəli Mehdiyev</h3>
+            <p id="graduate6-course"><b>Məzun:</b> Power BI</p>
+            <p id="graduate6-cert">📜 Power BI Sertifikatı</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Fuad.jpeg" alt="Fuad Cəbrayılov" class="teacher-img">
+            <h3>Fuad Cəbrayılov</h3>
+            <p id="graduate7-course"><b>Məzun:</b> Data Analyst</p>
+            <p id="graduate7-cert">🏆 Fərqlənmə ilə məzun</p>
+        </div>
+
+        <div class="card">
+            <img src="images/Nihad m.jpeg" alt="Nihad Məmmədli" class="teacher-img">
+            <h3>Nihad Məmmədli</h3>
+            <p id="graduate8-course"><b>Məzun:</b> Data Analyst</p>
+            <p id="graduate8-cert">📜 Data Analyst Sertifikatı</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+  <section class="section" id="career">
+
+  <h2 id="career-title">Karyera və Dəstək</h2>
 
   <div class="grid">
 
-<div class="card">
-   <img src="images/nihad.jpg" alt="Nihad Məmmədli" class="teacher-img">
-
-  <h3>Nihad Məmmədli</h3>
-  <p><b>Vəzifə:</b> Python Təlimçisi</p>
-  <p><b>Təcrübə:</b> Milla Diary LLC – Data Analyst</p>
-</div>
-
     <div class="card">
-     <img src="images/ziya.jpg" alt="Ziya Hacıyev" class="teacher-img">
-      <h3>Ziya Hacıyev</h3>
-      <p><b>Vəzifə:</b> Excel Təlimçisi</p>
-      <p><b>Sertifikatlar:</b> Excel, SQL, Power BI</p>
-      <p><b>Təcrübə:</b> ATS Food MMC – Financial Data Analyst</p>
-    </div>
-
-
-    <div class="card">
-   <img src="images/resul.jpg" alt="Rəsul Səfərəliyev" class="teacher-img">
-      <h3>Rəsul Səfərəliyev</h3>
-      <p><b>Vəzifə:</b> Statistika, Power BI Təlimçisi</p>
-      <p><b>Təcrübə:</b> PashaPay – Data Analyst</p>
+      <h3 id="career1-title">CV Hazırlanması</h3>
+      <p id="career1-text">Peşəkar və HR standartlarına uyğun CV hazırlanması.</p>
     </div>
 
     <div class="card">
-      <img src="images/ayan.jpg" alt="Ayan Məmmədzadə" class="teacher-img">
-
-      <h3>Ayan Məmmədzadə</h3>
-      <p><b>Vəzifə:</b> Excel Təlimçisi</p>
-      <p><b>Sertifikat:</b> Microsoft Office Specialist: Excel Expert</p>
-      <p><b>Təcrübə:</b> Pasha Insurance – Sales Reporting and Analytics</p>
+      <h3 id="career2-title">LinkedIn Profili</h3>
+      <p id="career2-text">LinkedIn profilinin yaradılması və optimallaşdırılması.</p>
     </div>
 
-
-  
     <div class="card">
-      <img src="images/namiq.jpg" alt="Namiq Cəfərov" class="teacher-img">
-
-      <h3>Namiq Cəfərov</h3>
-      <p><b>Vəzifə:</b> Python və SQL Təlimçisi</p>
-      <p><b>Təcrübə:</b> Digital Umbrella – Data Analyst</p>
+      <h3 id="career3-title">GitHub Portfolio</h3>
+      <p id="career3-text">GitHub hesabının yaradılması və layihələrin yerləşdirilməsi.</p>
     </div>
 
-
-    
     <div class="card">
-      <img src="images/ismayil.jpg" alt="İsmayıl Əliyev" class="teacher-img">
-
-      <h3>İsmayıl Əliyev</h3>
-      <p><b>Vəzifə:</b> Statistika Təlimçisi</p>
-      <p><b>Sertifikat:</b> MNS (Master of Natural Sciences)</p>
-      <p><b>İxtisas:</b> Data Analytics & AI</p>
-      <p><b>Təcrübə:</b> ELSER LLC, MSC Shipping (BI)</p>
+      <h3 id="career4-title">Müsahibəyə Hazırlıq</h3>
+      <p id="career4-text">Texniki və HR müsahibələri üçün hazırlıq.</p>
     </div>
 
+    <div class="card">
+      <h3 id="career5-title">Data Portfolio</h3>
+      <p id="career5-text">Real layihələrdən ibarət portfolio hazırlanması.</p>
+    </div>
+
+    <div class="card">
+      <h3 id="career6-title">Karyera Dəstəyi</h3>
+      <p id="career6-text">İş müraciətləri və karyera istiqamətləndirilməsi.</p>
+    </div>
 
   </div>
 
 </section>
 
-<!-- 📍 ƏLAQƏ -->
-<section class="section" id="contact">
 
-  <h2>📍 Konum & Əlaqə</h2>
 
-  <div class="info">
+    <section class="section" id="register">
 
-    <p>📍 28 May Tesla parkın yanı</p>
-    <p>📞 +994 51-654-21-66</p>
-
-    <a class="whatsapp-btn"
-   href="https://wa.me/994516542166"
-   target="_blank">
-  💬 WhatsApp ilə yaz
-</a>
-<a class="insta-btn"
-   href="https://www.instagram.com/dataprimeacademy/"
-   target="_blank"
-   rel="noopener noreferrer">
-  📸 Instagram səhifəsi
-</a>
-
-  </div>
-
-</section>
-
-<!-- 📝 QEYDİYYAT -->
-<section class="section">
-
-  <h2>📝 Qeydiyyat</h2>
+  <h2 id="register-title">Qeydiyyat</h2>
 
   <div class="form">
+
     <input id="name" placeholder="Ad Soyad" autocomplete="name">
+
     <input id="phone" placeholder="Telefon" autocomplete="tel">
 
-    <!-- ✔ FIX BURADA -->
     <select id="course">
       <option value="">Kurs seç</option>
       <option value="Excel">Excel</option>
@@ -193,21 +429,123 @@
       <option value="Python">Python</option>
     </select>
 
-    <button onclick="send()">Göndər</button>
+    <div class="education-type">
+
+      <p><strong id="education-title">Tədris forması</strong></p>
+
+      <label>
+        <input type="radio" name="educationType" value="Onlayn" checked>
+        <span id="online-text">Onlayn</span>
+      </label>
+
+      <label>
+        <input type="radio" name="educationType" value="Əyani">
+        <span id="offline-text">Əyani</span>
+      </label>
+
+    </div>
+
+    <button id="send-btn" onclick="send()">Göndər</button>
 
     <p id="msg"></p>
+
   </div>
+
+</section>
+
+<section class="section" id="contact">
+
+    <h2 id="contact-title">Əlaqə</h2>
+
+    <p class="section-desc" id="contact-desc">
+        Bizimlə əlaqə saxlayın və ya sosial şəbəkələrdə bizi izləyin.
+    </p>
+
+    <div class="contact-box">
+
+        <div class="contact-left">
+
+            <h3 id="address-title">📍 Ünvan</h3>
+
+            <p id="address-line1">28 May metrosu</p>
+            <p id="address-line2">Tesla Parkının yanı</p>
+            <p id="address-line3">Bakı, Azərbaycan</p>
+
+            <br>
+
+            <h3 id="phone-title">📞 Telefon</h3>
+
+            <p>
+                <a href="tel:+994516542166">
+                    +994 51 654 21 66
+                </a>
+            </p>
+
+            <br>
+
+            <h3 id="email-title">📧 E-mail</h3>
+
+            <p>
+                <a href="mailto:dataprimeacademy@gmail.com">
+                    dataprimeacademy@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+        <div class="contact-right">
+
+            <h3 id="location-title">🗺️ Konum</h3>
+
+            <iframe
+                src="https://www.google.com/maps?q=DataPrime+Academy+Baku&output=embed"
+                width="100%"
+                height="230"
+                style="border:0;border-radius:15px;"
+                loading="lazy">
+            </iframe>
+
+            <br><br>
+
+            <h3 id="social-title">🌐 Bizi Sosial Şəbəkələrdə İzləyin</h3>
+
+            <div class="social-icons">
+
+                <a href="https://www.instagram.com/dataprimeacademy/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://www.facebook.com/share/p/1Je3wkxz58/?mibextid=wwXIfr" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://wa.me/994516542166" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+            <p class="copyright" id="copyright">
+                Müəllif hüquqları qorunur!<br>
+                DataPrime Academy © 2024
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 <script>
 async function send() {
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
   const course = document.getElementById("course").value;
 
-  const msg = document.getElementById("msg");
+  const educationType =
+      document.querySelector('input[name="educationType"]:checked').value;
 
+  const msg = document.getElementById("msg");
   if (!name || !phone || !course) {
     msg.innerText = "⚠ Bütün xanaları doldurun!";
     msg.style.color = "red";
@@ -223,7 +561,12 @@ async function send() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, phone, course })
+      body: JSON.stringify({
+    name,
+    phone,
+    course,
+    educationType
+})
     });
 
     const data = await res.json();

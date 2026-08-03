@@ -13,23 +13,12 @@ body{
   color:white;
 }
 
-/* HEADER */
-h1{
-  text-align:center;
-  padding:25px;
-  font-size:32px;
-  background:linear-gradient(90deg,#7c4dff,#00d4ff);
-  background-clip:text;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
 
-/* CONTAINER */
 .container{
   padding:20px 8%;
 }
 
-/* CARD */
+
 .card{
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
@@ -51,7 +40,99 @@ h1{
 }
 
 .card b{
+
   color:#8fbcff;
+}
+  /* ===== HEADER ===== */
+
+.header{
+    position:relative;
+    padding:25px 8%;
+    margin-bottom:20px;
+}
+
+.header h1{
+    text-align:center;
+    font-size:36px;
+    margin:0;
+    background:linear-gradient(90deg,#7c4dff,#00d4ff);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+#logout-btn{
+    position:absolute;
+    top:25px;
+    right:8%;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#ff4d4d;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#logout-btn:hover{
+    background:#d63031;
+}
+
+/* ===== MƏLUMATLAR ===== */
+
+.container h2{
+    margin-bottom:15px;
+    color:#8fbcff;
+}
+
+#total-users{
+    margin-bottom:20px;
+    font-size:18px;
+    font-weight:600;
+}
+
+#search{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    margin-bottom:25px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    outline:none;
+    font-size:16px;
+}
+
+#search::placeholder{
+    color:#cfd8e3;
+}
+.delete-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    width:35px;
+    height:35px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#ff4d4d;
+    color:white;
+
+    cursor:pointer;
+    font-size:16px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.3s;
+}
+
+.delete-btn:hover{
+    background:#d63031;
+    transform:scale(1.1);
 }
 </style>
 
@@ -59,28 +140,67 @@ h1{
 
 <body>
 
-<h1>📋 Qeydiyyatdan Keçənlər</h1>
+<script>
+const PASSWORD = "03102024";
 
-<div class="container" id="list"></div>
+const entered = prompt("🔒 Admin kodunu daxil edin:");
+
+if (entered !== PASSWORD) {
+    alert("❌ Kod yanlışdır!");
+    window.location.href = "index.html";
+}
+</script>
+
+<div class="header">
+    <h1>✨ DataPrime  ✨</h1>
+
+    <button id="logout-btn">
+         Çıxış
+    </button>
+
+</div>
+
+<div class="container">
+
+    <h2>📋 Qeydiyyatdan Keçənlər</h2>
+
+    <p id="total-users">
+        👥 Ümumi qeydiyyat: 0
+    </p>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔍 Axtar...">
+
+    <div id="list"></div>
+
+</div>
 
 <script>
 async function loadData() {
   try {
     const res = await fetch("/api/registrations");
     const data = await res.json();
-
+document.getElementById("total-users").innerText =
+`👥 Ümumi qeydiyyat: ${data.length}`;
     const list = document.getElementById("list");
     list.innerHTML = "";
 
     data.forEach(item => {
       const div = document.createElement("div");
       div.className = "card";
+div.innerHTML = `
+<p><b>Ad:</b> ${item.name}</p>
+<p><b>Telefon:</b> ${item.phone}</p>
+<p><b>Kurs:</b> ${item.course}</p>
+<p><b>Tədris forması:</b> ${item.educationType || "-"}</p>
 
-      div.innerHTML = `
-        <p><b>Ad:</b> ${item.name}</p>
-        <p><b>Telefon:</b> ${item.phone}</p>
-        <p><b>Kurs:</b> ${item.course}</p>
-      `;
+<button class="delete-btn" onclick="deleteUser('${item._id}')">
+🗑
+</button>
+`;
+
 
       list.appendChild(div);
     });
@@ -90,9 +210,37 @@ async function loadData() {
       "<p>❌ Serverə qoşulmaq olmur</p>";
   }
 }
+async function deleteUser(id) {
+    if (!confirm("Bu qeydiyyatı silmək istəyirsiniz?")) return;
+
+    await fetch("/api/registrations/" + id, {
+        method: "DELETE"
+    });
+
+    loadData();
+}
 
 loadData();
+document.getElementById("logout-btn").onclick = function () {
+    window.location.href = "index.html";
+};
+document.getElementById("search").addEventListener("input", function () {
+
+    const value = this.value.toLowerCase();
+
+    document.querySelectorAll(".card").forEach(card => {
+
+        if (card.innerText.toLowerCase().includes(value)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
 </script>
+
 
 </body>
 </html>

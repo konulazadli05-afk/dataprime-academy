@@ -24,7 +24,8 @@ mongoose.connect(
 const RegistrationSchema = new mongoose.Schema({
   name: String,
   phone: String,
-  course: String
+  course: String,
+  educationType: String
 });
 
 const Registration = mongoose.model("Registration", RegistrationSchema);
@@ -63,36 +64,45 @@ app.get("/api/course/:id", (req, res) => {
 ====================== */
 app.post("/api/register", async (req, res) => {
   try {
-    const { name, phone, course } = req.body;
+  const { name, phone, course, educationType } = req.body;
 
-    if (!name || !phone || !course) {
-      return res.status(400).json({
-        message: "Bütün xanaları doldurun!"
-      });
-    }
+  console.log(req.body); // <-- Bunu bura əlavə et
 
-    const exists = await Registration.findOne({ phone });
-
-    if (exists) {
-      return res.status(409).json({
-        message: "⚠ Bu nömrə artıq qeydiyyatdan keçib!"
-      });
-    }
-
-    await Registration.create({ name, phone, course });
-
-    return res.status(200).json({
-      message: "Qeydiyyat uğurla tamamlandı!"
-    });
-
-  } catch (err) {
-    console.log("REGISTER ERROR:", err);
-
-    return res.status(500).json({
-      message: "Server xətası baş verdi!"
+  if (!name || !phone || !course) {
+    return res.status(400).json({
+      message: "Bütün xanaları doldurun!"
     });
   }
-});
+
+  const exists = await Registration.findOne({ phone });
+
+  if (exists) {
+    return res.status(409).json({
+      message: "⚠ Bu nömrə artıq qeydiyyatdan keçib!"
+    });
+  }
+
+  await Registration.create({
+    name,
+    phone,
+    course,
+    educationType
+  });
+
+  return res.status(200).json({
+    message: "Qeydiyyat uğurla tamamlandı!"
+  });
+
+
+} catch (err) {
+  console.log("REGISTER ERROR:", err);
+
+  return res.status(500).json({
+    message: "Server xətası baş verdi!"
+  });
+}
+
+}); 
 
 /* ======================
    ADMIN PANEL API
@@ -106,6 +116,14 @@ app.get("/api/registrations", async (req, res) => {
   }
 });
 
+app.delete("/api/registrations/:id", async (req, res) => {
+  try {
+    await Registration.findByIdAndDelete(req.params.id);
+    res.json({ message: "Silindi" });
+  } catch (err) {
+    res.status(500).json({ message: "Silinmədi" });
+  }
+});
 /* ======================
    START SERVER
 ====================== */
