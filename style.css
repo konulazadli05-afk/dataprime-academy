@@ -369,14 +369,15 @@ body{
 
 /* Təlimçi və məzun şəkilləri */
 
-.teacher-img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
+teacher-img{
+    width:100%;
+    height:260px;
     object-fit:cover;
+    border-radius:15px;
     display:block;
-    margin:0 auto 18px;
 }
+
+
 
 /* Kart mətnləri */
 
