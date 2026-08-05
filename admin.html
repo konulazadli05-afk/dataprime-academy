@@ -134,6 +134,93 @@ body{
     background:#d63031;
     transform:scale(1.1);
 }
+/* ===== ADMIN LOGIN ===== */
+
+.admin-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d6efd,#4f46e5);
+    padding:20px;
+}
+
+.admin-box{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    padding:40px 30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.admin-box img{
+    width:80px;
+    margin-bottom:15px;
+}
+
+.admin-box h1{
+    font-size:30px;
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.admin-box p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.admin-box input{
+    width:100%;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+    margin-bottom:20px;
+}
+
+.admin-box input:focus{
+    border-color:#0d6efd;
+}
+
+.admin-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#0d6efd;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.admin-box button:hover{
+    background:#004fc5;
+    transform:translateY(-2px);
+}
+
+
+
+@media(max-width:768px){
+
+.admin-box{
+    padding:30px 20px;
+}
+
+.admin-box h1{
+    font-size:24px;
+}
+
+.admin-box input,
+.admin-box button{
+    font-size:15px;
+}
+
+}
 </style>
 
 </head>
