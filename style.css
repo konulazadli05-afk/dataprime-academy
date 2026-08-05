@@ -515,6 +515,23 @@ iframe{
 }
 }
 
+.contact-box{
+    display:flex;
+    gap:40px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:35px;
+    backdrop-filter:blur(10px);
+    transition:.4s;
+}
+
+.contact-box:hover{
+    transform:translateY(-10px);
+    border-color:#7c4dff;
+    box-shadow:0 0 30px rgba(124,77,255,.4);
+}
+
 .contact-left h3,
 .contact-right h3{
     color:#8fbcff;
