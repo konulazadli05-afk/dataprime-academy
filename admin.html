@@ -308,6 +308,9 @@ async function deleteUser(id) {
 }
 
 loadData();
+
+// Hər 3 saniyədən bir avtomatik yenilə
+setInterval(loadData, 3000);
 document.getElementById("logout-btn").onclick = function () {
     window.location.href = "index.html";
 };
